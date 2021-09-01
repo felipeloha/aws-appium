@@ -13,12 +13,12 @@ This post bases on the following resources
 
 Implementation:
 - Infrastructure
-    - Autoscaling group with one ec2 c5.metal instance with amazon-linux
+    - Autoscaling group with one spot ec2 c5.metal instance with amazon-linux
     - A route53 entry in your configured hosted zone
     - The instance configuration: 
         - installs docker, docker-compose, awscli
         - runs the selenium grid and an emulator with `ci/appium/docker-compose.yaml` 
-        - updates the route53 entry with the instance public dns name
+        - updates the route53 entry with the instance public dns name. This is important for the cases when the spot instance is turned off and recreated
     - An autoscaling policy to turn off the instance during the weekends
     - Security groups to ssh into the instance
     - Permissions for the instance to run
