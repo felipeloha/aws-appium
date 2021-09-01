@@ -1,0 +1,22 @@
+# OSX
+#
+.DS_Store
+
+# IntelliJ
+#
+.idea
+
+# node.js
+#
+node_modules/
+*/**/node_modules/
+npm-debug.log
+
+# custom
+*.log
+allure-results/
+
+/tests/pageobjects/**
+/tests/screenobjects/**
+/tests/specs/**
+/tests/constants.js
